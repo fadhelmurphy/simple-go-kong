@@ -38,6 +38,6 @@ func (conf *Config) Access(kong *pdk.PDK) {
 	headerResponse["Content-Type"] = []string{"application/json"}
 
 	if headerKey == "" {
-		kong.Response.Exit(400, fmt.Sprintf(FailedResponse, conf.HeaderKey), headerResponse)
+		kong.Response.Exit(401, fmt.Sprintf(FailedResponse, conf.HeaderKey), headerResponse)
 	}
 }

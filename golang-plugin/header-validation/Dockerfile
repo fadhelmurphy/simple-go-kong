@@ -6,8 +6,7 @@ WORKDIR /builder
 
 COPY . .
 
-RUN apk add make
-RUN make build
+RUN go build -o header-validation .
 
 # STAGE-2
 # Build kong including the plugin that already build in previous stage
